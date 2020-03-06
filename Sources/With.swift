@@ -1,3 +1,9 @@
+// With
+// @author: Slipp Douglas Thompson
+// @license: Public Domain per The Unlicense.  See accompanying LICENSE file or <http://unlicense.org/>.
+
+
+
 // MARK: Ref-Type, Returning Subject
 
 /// “With” on an reference-type (object) subject, returning the same subject (including any mutations performed in the closure).
