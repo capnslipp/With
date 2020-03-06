@@ -24,10 +24,11 @@ public func with<SubjectT:AnyObject>(_ subject:SubjectT, operations:(inout Subje
 
 /// “With” on an reference-type (object) subject, returning an aribitrary return value from the closure (the subject is still mutated).
 @inlinable
-public func with<SubjectT:AnyObject, ReturnT>(_ subject:SubjectT, operations:(SubjectT) throws -> ReturnT)
+public func with<SubjectT:AnyObject, ReturnT:Any>(_ subject:SubjectT, operations:(inout SubjectT) throws -> ReturnT)
 	rethrows -> ReturnT
 {
-	return try operations(subject)
+	var subject = subject
+	return try operations(&subject)
 }
 
 
