@@ -1,11 +1,11 @@
 # With
 
-With is a Swift micro-library that provides a `with` statement— _which is modelled after the `with` functionality found in Python, JavaScript, Visual Basic, Object Pascal, Delphi; `using` found in C#; and `also`/`let` found in Kotlin.
+With is a Swift micro-library that provides a `with` statement— _which is modeled after the `with` functionality found in Python, JavaScript, Visual Basic, Object Pascal, Delphi; `using` found in C#; and `also`/`let` found in Kotlin._
 
 With provides a set of overloaded generic free functions that are useful for:
 
-* Object or value initialization and setup in a delclarative style _(think Swift UI's hierarchical style, but for anything, anywhere)_.
-* Performing multiple operations on a object/value fetched via a method/property, while staying D.R.Y and without needing to create a local var _(while still avoiding invoking the method/getter repeatedly)_.
+* Object or value initialization and setup in a declarative style _(think Swift UI's hierarchical style, but for anything, anywhere)_.
+* Performing multiple operations on an object/value fetched via a method/property, while staying D.R.Y and without needing to create a local var _(while still avoiding invoking the method/getter repeatedly)_.
 * Performing calculations with an object that only needs to live long enough to be configured and do some calc _(and you're only interested in a result value)_.
 
 With provides a set of overloaded generic free functions `func with(_ subject: SubjectT, operations: (inout SubjectT) -> Void) -> SubjectT` that can be used on any object or value type to do stuff like this:
