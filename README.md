@@ -48,12 +48,12 @@ let newButton = with(UIButton(type: .system)) {
 }
 ```
 
-With also has an alternate `func with(_ subject: SubjectT, operations: (inout SubjectT) -> ReturnT) -> SubjectT` form that can return an arbitrary value from the closure (instead of the value passed in):
+With also has an alternate `func withMap(_ subject: SubjectT, operations: (inout SubjectT) -> ReturnT) -> SubjectT` form that can return an arbitrary value from the closure (instead of the value passed in):
 
 ```swift
 // initializes a `DateFormatter`, configures it, and uses it to calculate a
 //   `String` which is the only thing we want to hang onto
-let dateString = with(DateFormatter()) {
+let dateString = withMap(DateFormatter()) {
 	$0.dateStyle = .medium
 	$0.timeStyle = .none
 	$0.locale = Locale(identifier: "en_US")
