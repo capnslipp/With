@@ -11,7 +11,7 @@
 /// Unfortunately, we need to use `inout` for the `operations` closure here, so that the arguments exactly match the value-type (`SubjectT:Any`) version further down— we get a _“Ambiguous use of 'with'”_ error if the `inout` isn't in there.
 /// 	(I believe Swift only lets us overload a function with a distinct ref-type version and a value-type version when the arguments match exactly)
 @inlinable @discardableResult
-public func with<SubjectT:AnyObject>(_ subject:SubjectT, operations:(inout SubjectT) throws -> Void)
+public func with<SubjectT:AnyObject>(_ subject:SubjectT, _ operations:(inout SubjectT) throws -> Void)
 	rethrows -> SubjectT
 {
 	var subject = subject
@@ -24,7 +24,7 @@ public func with<SubjectT:AnyObject>(_ subject:SubjectT, operations:(inout Subje
 
 /// “With” on a value-type (struct, enum) subject, returning the same subject (technically a copy, including any mutations performed in the closure).
 @inlinable
-public func with<SubjectT:Any>(_ subject:SubjectT, operations:(inout SubjectT) throws -> Void)
+public func with<SubjectT:Any>(_ subject:SubjectT, _ operations:(inout SubjectT) throws -> Void)
 	rethrows -> SubjectT
 {
 	var subject = subject
@@ -40,7 +40,7 @@ public func with<SubjectT:Any>(_ subject:SubjectT, operations:(inout SubjectT) t
 /// Unfortunately, we need to use `inout` for the `operations` closure here, so that the arguments exactly match the value-type (`SubjectT:Any`) version further down— we get a _“Ambiguous use of 'with'”_ error if the `inout` isn't in there.
 /// 	(I believe Swift only lets us overload a function with a distinct ref-type version and a value-type version when the arguments match exactly) 
 @inlinable
-public func withMap<SubjectT:AnyObject, ReturnT:Any>(_ subject:SubjectT, transform:(inout SubjectT) throws -> ReturnT)
+public func withMap<SubjectT:AnyObject, ReturnT:Any>(_ subject:SubjectT, _ transform:(inout SubjectT) throws -> ReturnT)
 	rethrows -> ReturnT
 {
 	var subject = subject
@@ -52,7 +52,7 @@ public func withMap<SubjectT:AnyObject, ReturnT:Any>(_ subject:SubjectT, transfo
 
 /// “With” on a value-type (struct, enum) subject, returning an aribitrary return value from the closure (the subject is still mutated).
 @inlinable
-public func withMap<SubjectT:Any, ReturnT:Any>(_ subject:SubjectT, transform:(inout SubjectT) throws -> ReturnT)
+public func withMap<SubjectT:Any, ReturnT:Any>(_ subject:SubjectT, _ transform:(inout SubjectT) throws -> ReturnT)
 	rethrows -> ReturnT
 {
 	var subject = subject
