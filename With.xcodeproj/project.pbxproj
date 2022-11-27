@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		FA02915329333B93005B9903 /* WithDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02915229333B93005B9903 /* WithDo.swift */; };
 		OBJ_22 /* With.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_8 /* With.swift */; };
 		OBJ_29 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_40 /* WithTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* WithTests.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA02915229333B93005B9903 /* WithDo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WithDo.swift; sourceTree = "<group>"; };
 		OBJ_11 /* WithTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithTests.swift; sourceTree = "<group>"; };
 		OBJ_12 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
 		OBJ_16 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_8 /* With.swift */,
+				FA02915229333B93005B9903 /* WithDo.swift */,
 			);
 			path = Sources;
 			sourceTree = SOURCE_ROOT;
@@ -205,6 +208,7 @@
 			buildActionMask = 0;
 			files = (
 				OBJ_22 /* With.swift in Sources */,
+				FA02915329333B93005B9903 /* WithDo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
