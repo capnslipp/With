@@ -21,7 +21,7 @@ final class WithTests : XCTestCase
 			let result2 = withMap(stringValue){
 				$0.append("2")
 				return [ $0 ]
-			}
+			} as [String]
 			XCTAssertEqual(stringValue, "")
 			XCTAssertEqual(result2, [ "2" ])
 		}
@@ -41,7 +41,7 @@ final class WithTests : XCTestCase
 			let result6 = withMap(stringObject){
 				$0.append("6")
 				return [ $0 ]
-			}
+			} as [NSMutableString]
 			XCTAssertEqual(stringObject, "56")
 			XCTAssertEqual(result6, [ "56" ])
 		}
