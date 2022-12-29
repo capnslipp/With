@@ -24,7 +24,6 @@
 		OBJ_22 /* With.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_8 /* With.swift */; };
 		OBJ_29 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_40 /* WithTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* WithTests.swift */; };
-		OBJ_41 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* XCTestManifests.swift */; };
 		OBJ_43 /* With.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "With::With::Product" /* With.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,7 +46,6 @@
 
 /* Begin PBXFileReference section */
 		OBJ_11 /* WithTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithTests.swift; sourceTree = "<group>"; };
-		OBJ_12 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
 		OBJ_16 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		OBJ_8 /* With.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = With.swift; sourceTree = "<group>"; };
@@ -78,7 +76,6 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_11 /* WithTests.swift */,
-				OBJ_12 /* XCTestManifests.swift */,
 			);
 			name = WithTests;
 			path = Tests/WithTests;
@@ -221,7 +218,6 @@
 			buildActionMask = 0;
 			files = (
 				OBJ_40 /* WithTests.swift in Sources */,
-				OBJ_41 /* XCTestManifests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
