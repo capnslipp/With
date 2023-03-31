@@ -7,7 +7,7 @@
 // MARK: Returning Subject
 
 /// “With” on an object- or value-type subject, returning the same subject (including any mutations performed in the closure).
-@inlinable @discardableResult
+@_transparent @discardableResult
 public func with<SubjectT>(_ subject:SubjectT, _ operations:(inout SubjectT) throws -> Void)
 	rethrows -> SubjectT
 {
@@ -20,7 +20,7 @@ public func with<SubjectT>(_ subject:SubjectT, _ operations:(inout SubjectT) thr
 // MARK: Returning Arbitrary Value
 
 /// “With” on an object- or value-type subject, returning an aribitrary return object/value from the closure (the subject is still mutated).
-@inlinable
+@_transparent
 public func withMap<SubjectT, ReturnT>(_ subject:SubjectT, _ transform:(inout SubjectT) throws -> ReturnT)
 	rethrows -> ReturnT
 {
