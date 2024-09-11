@@ -15,14 +15,14 @@ With provides a free function `func with(_ subject: SubjectT, operations: (inout
 //   `SCNView`'s `hitTest(…)` with the desired options some of which have
 //   changed in newer OS versions (which the standard dictionary literal syntax
 //   can't cleanly do)
-let hitTestOptions = with([SCNHitTestOption : Any]()) { o in
-	o[.boundingBoxOnly] = true
-	o[.rootNode] = _myRootNode
+let hitTestOptions = with([SCNHitTestOption : Any]()) {
+	$0[.boundingBoxOnly] = true
+	$0[.rootNode] = _myRootNode
 	if #available(iOS 11.0, tvOS 11.0, macOS 10.13, *) {
-		o[.searchMode] = SCNHitTestSearchMode.all.rawValue
+		$0[.searchMode] = SCNHitTestSearchMode.all.rawValue
 	} else {
-		o[.sortResults] = true
-		o[.firstFoundOnly] = false
+		$0[.sortResults] = true
+		$0[.firstFoundOnly] = false
 	}
 }
 ```
@@ -32,19 +32,19 @@ Or like this:
 ```swift
 // initializes the object-type `newButton` with title, sizing, styling, etc.
 //   and adds the view to a superview
-let newButton = with(UIButton(type: .system)) { b in
-	b.titleLabel!.font = .systemFont(ofSize: 13)
-	b.setTitle("My Button", for: .normal)
-	b.autoresizingMask = [ .flexibleLeftMargin, .flexibleBottomMargin ]
-	b.contentEdgeInsets = UIEdgeInsets(top: 6.5, left: 7, bottom: 6.5, right: 7)
-	with(b.layer) { l in
-		l.borderWidth = 1.0
-		l.borderColor = UIColor.white.cgColor
-		l.cornerRadius = 5
+let newButton = with(UIButton(type: .system)) {
+	$0.titleLabel!.font = .systemFont(ofSize: 13)
+	$0.setTitle("My Button", for: .normal)
+	$0.autoresizingMask = [ .flexibleLeftMargin, .flexibleBottomMargin ]
+	$0.contentEdgeInsets = UIEdgeInsets(top: 6.5, left: 7, bottom: 6.5, right: 7)
+	with($0.layer) { layer in
+		layer.borderWidth = 1.0
+		layer.borderColor = UIColor.white.cgColor
+		layer.cornerRadius = 5
 	}
-	b.sizeToFit()
+	$0.sizeToFit()
 	
-	rootViewController.view.addSubview(b)
+	rootViewController.view.addSubview($0)
 }
 ```
 
@@ -53,12 +53,12 @@ With also has an alternate `func withMap(_ subject: SubjectT, operations: (inout
 ```swift
 // initializes a `DateFormatter`, configures it, and uses it to calculate a
 //   `String` which is the only thing we want to hang onto
-let dateString = withMap(DateFormatter()) { f in
-	f.dateStyle = .medium
-	f.timeStyle = .none
-	f.locale = Locale(identifier: "en_US")
+let dateString = withMap(DateFormatter()) {
+	$0.dateStyle = .medium
+	$0.timeStyle = .none
+	$0.locale = Locale(identifier: "en_US")
 	
 	let currentDate = Date()
-	return f.string(from: currentDate)
+	return $0.string(from: currentDate)
 }
 ```
