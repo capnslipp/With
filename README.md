@@ -1,6 +1,6 @@
 # With
 
-With is a Swift micro-library that provides a `with` statement— _which is modeled after the `with` functionality found in Python, JavaScript, Visual Basic, Object Pascal, Delphi; `using` found in C#; and `also`/`let` found in Kotlin._
+With is a Swift micro-library that provides a `with` statement, akin to the `with` functionality found in Python, JavaScript, Visual Basic, Object Pascal, Delphi; `using` found in C#; and `also`/`let` found in Kotlin.
 
 With provides a set of overloaded generic free functions that are useful for:
 
