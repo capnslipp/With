@@ -62,3 +62,21 @@ let dateString = withMap(DateFormatter()) {
 	return $0.string(from: currentDate)
 }
 ```
+
+
+## Alternatives
+
+Swift natively supports immediately-called closures, so it's possible to write, for instance, the `DateFormatter` example above as this without the need for `with`/`withMap`:
+
+```swift
+let dateString = {
+	$0.dateStyle = .medium
+	$0.timeStyle = .none
+	$0.locale = Locale(identifier: "en_US")
+	
+	let currentDate = Date()
+	return $0.string(from: currentDate)
+}((DateFormatter()))
+```
+
+However, this puts the operations out of order of how they are executed— the `DateFormatter()` construction is the last line but happens first, then the closure above it is executed.  I prefer With's top-to-bottom ordering stylistically.
